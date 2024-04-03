@@ -40,9 +40,9 @@
                
 <td>
 
- <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Chi tiết </a> 
- 
- <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Mua ngay </a> 
+                    <a class="btn btn-success" asp-action="AddToCart" asp-controller="ShoppingCart" asp-route-Id="@product.Id" asp-route-quantity="1">Chi tiết </a>
+
+                    <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Mua ngay </a> 
  
  <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Chi tiết </a> 
 
