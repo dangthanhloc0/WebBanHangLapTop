@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using WebBanHangLapTop.Models;
-public class ApplicationDbContext : DbContext
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
 	public ApplicationDbContext(DbContextOptions<ApplicationDbContext>
 	options) : base(options)

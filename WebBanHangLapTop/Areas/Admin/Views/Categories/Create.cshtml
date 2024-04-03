@@ -1,0 +1,14 @@
+﻿@model WebBanHangLapTop.Models.Category
+<h1>New category</h1>
+
+<form method="post" asp-action="Create" asp-area="Admin" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-outline-info">Create</button>
+</form>
+
+

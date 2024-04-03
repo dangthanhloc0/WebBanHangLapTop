@@ -10,11 +10,11 @@
 		<img src="@Model.ImageUrl" alt="Product Image" style="max-width:
 	200px;" />
 	}
-     <h1>List ảnh</h1>
-		@foreach (var item in ViewBag.images)
-		{
-			<img src="@item.Url" alt="Product Image" style="max-width:
+	<h1>List ảnh</h1>
+	@foreach (var item in ViewBag.ProductImage)
+	{
+		<img src="@item.Url" alt="Product Image" style="max-width:
 		200px; height:300px;" class="mx-3" />
-		}	
+	}
 </div>
 <a class="btn btn-primary mt-2" asp-action="Index">Back to List</a>

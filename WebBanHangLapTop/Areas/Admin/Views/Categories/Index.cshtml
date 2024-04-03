@@ -1,0 +1,33 @@
+﻿@model List< WebBanHangLapTop.Models.Category>
+<h1>Category</h1>
+<a asp-action="Create" asp-area="Admin">Create</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            @* <td>Số lượng</td>  *@
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <Tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+
+                @* <td>@ViewBag.ListNumberCategori[@item.Id]</td> *@
+
+
+
+                <td>
+                    <a asp-action="Edit" asp-area="Admin" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-area="Admin" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </Tbody>
+</table>
+

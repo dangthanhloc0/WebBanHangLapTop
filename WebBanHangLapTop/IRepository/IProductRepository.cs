@@ -11,9 +11,15 @@ namespace WebBanHangLapTop.Repository
         void Delete(int id);*/
 
 		Task<IEnumerable<Product>> GetAllAsync();
+
+		Task<IEnumerable<ProductImage>> GetAllImagesById(int id);
 		Task<Product> GetByIdAsync(int id);
-		Task AddAsync(Product product, string url);
+		Task AddAsync(Product product,List<IFormFile> Images);
 		Task UpdateAsync(Product product);
 		Task DeleteAsync(int id);
-	}
+
+        Task<int> CountCategoryByIDAsync(int id);
+
+        Task<IEnumerable<int>> GetListCountCategory();
+    }
 }

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebBanHangLapTop.Models.Product>
+
+<h2>Products</h2>
+<a asp-action="Create" asp-area="Admin" class="btn btn-outline-info">Create</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Description</td>
+                @*   @foreach (var item in ViewBag.categorys)
+            {
+            if (item.Id == @product.CategoryId)
+            {
+            <td>@item.Name</td>
+            break;
+            }
+            } *@
+                <td>@product.Category?.Name</td>
+                <td>
+                    <img src="@product.ImageUrl" style="max-width:200px; height:auto;" class="imageGallery" loading="lazy" />
+                </td>
+
+
+
+                <td>
+          
+                    <a asp-action="Edit" asp-area="Admin" asp-route-id="@product.Id" class="btn btn-outline-info">Edit</a>
+                    <a asp-action="Details" asp-area="Admin" asp-route-id="@product.Id" class="btn btn-outline-info">Details</a>
+                    <a asp-action="Delete" asp-area="Admin" asp-route-id="@product.Id" class="btn btn-outline-info">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

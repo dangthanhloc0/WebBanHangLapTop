@@ -1,6 +1,10 @@
 ﻿
-@model List<WebBanHangLapTop.Models.Product>
+@model IEnumerable<WebBanHangLapTop.Models.Product>
+
 <h2>Products</h2>
+
+
+
 <table class="table">
 <thead>
 <tr>
@@ -8,26 +12,39 @@
 <th>Price</th>
 <th>Description</th>
 <th>Category</th>
+<th>Image</th>
 <th>Actions</th>
 </tr>
 </thead>
 <tbody>
-        @foreach (var product in Model)
+ @foreach (var product in Model)
 {
-<tr>
+<tr class="border border-2 rounded-3">
 <td>@product.Name</td>
 <td>@product.Price</td>
 <td>@product.Description</td>
- <td>@product.Category.Name</td>
+              @*   @foreach (var item in ViewBag.categorys)
+                {
+                    if (item.Id == @product.CategoryId)
+                    {
+                        <td>@item.Name</td>
+                        break;
+                    }
+                } *@
+                <td>@product.Category?.Name</td>
+ <td>                                    
+     <img src ="@product.ImageUrl" style="max-width:200px; height:auto;" class="imageGallery" loading="lazy" />                                                                      
+ </td>
+
                     
                
 <td>
 
-<a asp-action="Display" asp-route-id="@product.Id">View</a> |
-
-<a asp-action="Update" asp-route-id="@product.Id">Edit</a> |
-
-<a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+ <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Chi tiết </a> 
+ 
+ <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Mua ngay </a> 
+ 
+ <a class="btn btn-success" asp-action="Display" asp-route-id="@product.Id">Chi tiết </a> 
 
 </td>
 </tr>

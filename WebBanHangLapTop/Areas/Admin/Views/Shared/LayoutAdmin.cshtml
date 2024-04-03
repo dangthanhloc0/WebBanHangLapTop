@@ -4,15 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @{
-        
+
     }
     <title>@ViewData["Title"] - WebBanHangLapTop</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebBanHangLapTop.styles.css" asp-append-version="true" />
-   
+
 </head>
 <body>
+
     <header class="bg-success text-white text-center py-4">
         <h1>Website bán hàng</h1>
     </header>
@@ -25,8 +26,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                 
-                    <partial name="_LoginPartial" />
+                    <a class="btn btn-primary mx-3" asp-area="Admin" asp-controller="Products" asp-action="Index">Products</a>
+                    <a class ="btn btn-primary mx-3" asp-area="Admin" asp-controller="Categories" asp-action="Index">Categories</a>
                 </ul>
             </div>
         </div>
@@ -42,7 +43,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-                   <h1>"Không có gì khó chỉ sợ lòng không bền"</h1>
+            &copy; 2024 - WebBanHangLapTop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
